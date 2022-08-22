@@ -1,5 +1,6 @@
 # WorstMovie_GoldenRaspberryAwards
 Pré-requisito
+
 Antes de rodar a aplicação é preciso garantir que as seguintes dependências estejam corretamente instaladas:
 
 Java 8
