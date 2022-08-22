@@ -45,6 +45,23 @@ Então, depois de iniciar o aplicativo, podemos navegar para http://localhost:80
 Na página de login, forneceremos as mesmas credenciais que usamos no application.properties :
 Assim que nos conectarmos, veremos uma página da Web abrangente que lista todas as tabelas no lado esquerdo da página e uma caixa de texto para executar consultas SQL:
 
+O console da web possui um recurso de preenchimento automático que sugere palavras-chave SQL. O fato de o console ser leve o torna útil para inspecionar visualmente o banco de dados ou executar SQL bruto diretamente.
+
+Além disso, podemos configurar ainda mais o console especificando as seguintes propriedades no application.properties do projeto com nossos valores desejados:
+
+spring.h2.console.path=/h2-console
+spring.h2.console.settings.trace=false
+spring.h2.console.settings.web-allow-others=false
+Da mesma forma, ao usar a configuração YAML, podemos adicionar as propriedades acima como:
+
+spring:
+  h2:
+    console.path: /h2-console
+    console.settings.trace: false 
+    spring.h2.console.settings.web-allow-others: false
+Nos trechos acima, definimos o caminho do console como /h2-console , que é relativo ao endereço e porta do nosso aplicativo em execução. Portanto, se nosso aplicativo estiver sendo executado em http://localhost:9001 , o console estará disponível em http://localhost:9001/h2-console.
+
+Além disso, definimos spring.h2.console.settings.trace como false para evitar a saída de rastreamento e também podemos desabilitar o acesso remoto definindo spring . h2.console.settings.web-allow-others para false .
 Outros
 Serviços disponíveis no back-end:
 
